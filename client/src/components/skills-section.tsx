@@ -1,26 +1,54 @@
+
 import { motion } from "framer-motion";
-import { Code2, Database, Server, Braces } from "lucide-react";
+import { Code2 } from "lucide-react";
+import { 
+  SiJava, SiJavascript, SiPython, SiBash,
+  SiSpring, SiNodedotjs, SiExpress, SiReact, SiAngular,
+  SiDocker, SiAmazonaws, SiGit, SiApache, SiWso2,
+  SiMysql, SiMongodb
+} from "@react-icons/all-files/si";
 
 const skillCategories = [
   {
     title: "Programming Languages",
-    icon: Braces,
-    skills: ["Java", "JavaScript", "Python", "Bash"]
+    icon: Code2,
+    skills: [
+      { name: "Java", icon: SiJava },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Python", icon: SiPython },
+      { name: "Bash", icon: SiBash }
+    ]
   },
   {
     title: "Frameworks",
     icon: Code2,
-    skills: ["Spring Boot", "Node", "Express", "React", "Angular"]
+    skills: [
+      { name: "Spring Boot", icon: SiSpring },
+      { name: "Node", icon: SiNodedotjs },
+      { name: "Express", icon: SiExpress },
+      { name: "React", icon: SiReact },
+      { name: "Angular", icon: SiAngular }
+    ]
   },
   {
     title: "Servers & Platforms",
-    icon: Server,
-    skills: ["SoftwareAG", "Docker", "AWS", "GIT", "Apigee", "WSO2"]
+    icon: Code2,
+    skills: [
+      { name: "SoftwareAG", icon: Code2 },
+      { name: "Docker", icon: SiDocker },
+      { name: "AWS", icon: SiAmazonaws },
+      { name: "GIT", icon: SiGit },
+      { name: "Apigee", icon: SiApache },
+      { name: "WSO2", icon: SiWso2 }
+    ]
   },
   {
     title: "Databases",
-    icon: Database,
-    skills: ["MySQL", "MongoDB"]
+    icon: Code2,
+    skills: [
+      { name: "MySQL", icon: SiMysql },
+      { name: "MongoDB", icon: SiMongodb }
+    ]
   }
 ];
 
@@ -53,7 +81,7 @@ export default function SkillsSection() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {category.skills.map((skill, index) => (
                   <motion.div
-                    key={skill}
+                    key={skill.name}
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -62,9 +90,9 @@ export default function SkillsSection() {
                     className="flex flex-col items-center"
                   >
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                      <span className="text-primary font-bold text-lg">{skill[0]}</span>
+                      <skill.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h4 className="text-lg font-medium text-center">{skill}</h4>
+                    <h4 className="text-lg font-medium text-center">{skill.name}</h4>
                   </motion.div>
                 ))}
               </div>
