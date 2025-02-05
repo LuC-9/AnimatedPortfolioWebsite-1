@@ -74,9 +74,14 @@ export default function WorkExperience() {
                       <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                         {experience.title}
                       </h3>
-                      <p className="text-muted-foreground">
-                        {experience.company} • {experience.period} • {experience.location}
-                      </p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-muted-foreground">
+                          {experience.company}
+                        </p>
+                        <p className="text-muted-foreground text-right">
+                          {experience.period} • {experience.location}
+                        </p>
+                      </div>
                       <ul className="mt-2 space-y-1 text-muted-foreground list-disc list-inside">
                         {experience.description.map((point, i) => (
                           <li key={i}>{point}</li>
