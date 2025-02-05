@@ -22,7 +22,7 @@ export default function EducationSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="group hover:shadow-lg transition-all duration-300">
+            <Card className="group hover:shadow-xl hover:-translate-y-2 hover:bg-primary/5 transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <motion.div
