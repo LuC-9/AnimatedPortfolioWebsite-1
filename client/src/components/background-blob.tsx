@@ -8,14 +8,19 @@ export default function BackgroundBlob() {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.4, 0.7, 0.4],
+            rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 5,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="w-[500px] h-[500px] rounded-full bg-gradient-to-r from-primary/20 via-secondary/30 to-primary/20 blur-3xl"
+          className="w-[600px] h-[600px] rounded-full bg-gradient-radial from-primary/30 via-secondary/40 to-transparent backdrop-blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, transparent 70%)',
+            boxShadow: '0 0 100px 60px rgba(255,255,255,0.1)',
+          }}
         />
       </div>
     </div>
