@@ -4,7 +4,7 @@ import { Code2 } from "lucide-react";
 import { 
   SiJava, SiJavascript, SiPython, SiBash,
   SiSpring, SiNodedotjs, SiExpress, SiReact, SiAngular,
-  SiDocker, SiAmazonaws, SiGit, SiApache, SiWso2,
+  SiDocker, SiAws, SiGit, SiApache, SiWso2,
   SiMysql, SiMongodb
 } from "react-icons/si";
 
@@ -36,7 +36,7 @@ const skillCategories = [
     skills: [
       { name: "SoftwareAG", icon: Code2 },
       { name: "Docker", icon: SiDocker },
-      { name: "AWS", icon: SiAmazonaws },
+      { name: "AWS", icon: SiAws },
       { name: "GIT", icon: SiGit },
       { name: "Apigee", icon: SiApache },
       { name: "WSO2", icon: SiWso2 }
