@@ -16,10 +16,10 @@ export default function BackgroundBlob() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="w-[600px] h-[600px] rounded-full bg-gradient-radial from-primary/30 via-secondary/40 to-transparent backdrop-blur-3xl"
+          className="w-[600px] h-[600px] rounded-full bg-gradient-radial from-white/30 via-white/20 to-transparent backdrop-blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, transparent 70%)',
-            boxShadow: '0 0 100px 60px rgba(255,255,255,0.1)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.1) 50%, transparent 70%)',
+            boxShadow: '0 0 100px 60px rgba(255,255,255,0.15)',
           }}
         />
       </div>
