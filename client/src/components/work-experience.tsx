@@ -6,7 +6,8 @@ const experiences = [
   {
     title: "Engineer",
     company: "Nagarro",
-    period: "Current",
+    period: "01/2024 – Present",
+    location: "Gurugram, India",
     description: [
       "Developed and optimized 250+ APIs for seamless system integration",
       "Delivered scalable backend solutions to enhance performance and reliability",
@@ -16,7 +17,8 @@ const experiences = [
   {
     title: "Associate Engineer",
     company: "Nagarro",
-    period: "Previous",
+    period: "07/2022 – 12/2023",
+    location: "Gurugram, India",
     description: [
       "Developed expertise in Java and Spring Boot for backend development",
       "Managed codebases using Git and version control systems",
@@ -26,7 +28,8 @@ const experiences = [
   {
     title: "Systems Engineer Intern",
     company: "Infosys",
-    period: "2022",
+    period: "02/2022 – 05/2022",
+    location: "Mysore, India",
     description: [
       "Developed a system for managing complaints across city departments with role-based access",
       "Implemented solution for Police, Healthcare, Education, and Transport departments",
@@ -72,7 +75,7 @@ export default function WorkExperience() {
                         {experience.title}
                       </h3>
                       <p className="text-muted-foreground">
-                        {experience.company} • {experience.period}
+                        {experience.company} • {experience.period} • {experience.location}
                       </p>
                       <ul className="mt-2 space-y-1 text-muted-foreground list-disc list-inside">
                         {experience.description.map((point, i) => (
