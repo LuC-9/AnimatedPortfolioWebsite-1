@@ -36,15 +36,24 @@ export default function EducationSection() {
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                       Bachelor of Technology
                     </h3>
-                    <p className="text-lg text-muted-foreground">
-                      Computer Science and Engineering
-                    </p>
-                    <p className="text-muted-foreground mt-1">
-                      PSIT College of Engineering
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      July 2018 - July 2022
-                    </p>
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="text-lg text-muted-foreground">
+                          Computer Science and Engineering
+                        </p>
+                        <p className="text-muted-foreground">
+                          PSIT College of Engineering
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-muted-foreground">
+                          July 2018 - July 2022
+                        </p>
+                        <p className="text-muted-foreground">
+                          Kanpur, India
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>

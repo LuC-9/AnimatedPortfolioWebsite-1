@@ -5,6 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 
+// Dummy BackgroundBlob component - needs actual implementation
+function BackgroundBlob() {
+  return <div>/* Background blob implementation would go here */</div>;
+}
+
 function Router() {
   return (
     <Switch>
@@ -17,7 +22,10 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
+      <main className="min-h-screen">
+        <BackgroundBlob />
+        <Router />
+      </main>
       <Toaster />
     </QueryClientProvider>
   );
