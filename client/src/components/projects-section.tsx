@@ -39,7 +39,7 @@ export default function ProjectsSection() {
         >
           Featured Projects
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
