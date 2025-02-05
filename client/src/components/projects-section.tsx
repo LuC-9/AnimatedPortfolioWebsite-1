@@ -48,7 +48,7 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="hover:shadow-xl hover:-translate-y-2 hover:bg-primary/5 transition-all duration-300">
+              <Card className="hover:shadow-xl hover:-translate-y-2 hover:translate-z-12 hover:rotate-3 hover:bg-primary/5 transition-all duration-300 transform-gpu perspective-1000">
                 <CardHeader>
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                 </CardHeader>
