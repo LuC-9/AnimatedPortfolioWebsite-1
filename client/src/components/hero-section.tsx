@@ -6,6 +6,18 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center relative" data-scroll-section>
       <div className="container mx-auto px-4 text-center">
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/20"
+        >
+          <img 
+            src="/profile.jpg" 
+            alt="Aarsh Mishra" 
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
