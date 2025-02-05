@@ -6,14 +6,25 @@ export default function EducationSection() {
   return (
     <section className="py-20 bg-accent/5" data-scroll-section>
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold mb-12 text-center"
-        >
-          Education
-        </motion.h2>
+        <div className="flex items-center justify-center mb-12 gap-4">
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.5 }}
+            className="bg-primary/10 p-4 rounded-full"
+          >
+            <GraduationCap className="w-8 h-8 text-primary" />
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold"
+          >
+            Education
+          </motion.h2>
+        </div>
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
