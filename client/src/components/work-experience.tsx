@@ -39,25 +39,15 @@ export default function WorkExperience() {
   return (
     <section className="py-20" data-scroll-section>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center mb-12 gap-4">
-          <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", bounce: 0.5 }}
-            className="bg-primary/10 p-4 rounded-full"
-          >
-            <Building2 className="w-8 h-8 text-primary" />
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold"
-          >
-            Work Experience
-          </motion.h2>
-        </div>
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          whileInView={{ scale: 1, rotate: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
+          className="bg-primary/10 p-6 rounded-full w-fit mx-auto mb-12"
+        >
+          <Building2 className="w-12 h-12 text-primary" />
+        </motion.div>
         <div className="grid gap-8 max-w-3xl mx-auto">
           {experiences.map((experience, index) => (
             <motion.div
