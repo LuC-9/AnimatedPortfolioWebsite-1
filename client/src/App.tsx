@@ -5,10 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 
-// Dummy BackgroundBlob component - needs actual implementation
-function BackgroundBlob() {
-  return <div>/* Background blob implementation would go here */</div>;
-}
+import BackgroundBlob from "./components/background-blob";
 
 function Router() {
   return (
