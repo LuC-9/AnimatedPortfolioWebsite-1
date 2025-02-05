@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import { Code2 } from "lucide-react";
 import { 
-  SiJava, SiJavascript, SiPython, SiGnubash,
-  SiSpringboot, SiNodedotjs, SiExpress, SiReactjs, SiAngular,
-  SiDocker, SiAmazonwebservices, SiGit, SiApache, SiJson,
+  SiJavascript, SiPython, SiGit,
+  SiSpring, SiNodedotjs, SiExpress, SiReact, SiAngular,
+  SiDocker, SiAmazonaws, SiApache, SiPostman,
   SiMysql, SiMongodb
 } from "react-icons/si";
 
@@ -13,20 +13,20 @@ const skillCategories = [
     title: "Programming Languages",
     icon: Code2,
     skills: [
-      { name: "Java", icon: SiJava },
+      { name: "Java", icon: Code2 },
       { name: "JavaScript", icon: SiJavascript },
       { name: "Python", icon: SiPython },
-      { name: "Bash", icon: SiGnubash }
+      { name: "Shell", icon: Code2 }
     ]
   },
   {
     title: "Frameworks",
     icon: Code2,
     skills: [
-      { name: "Spring Boot", icon: SiSpringboot },
+      { name: "Spring Boot", icon: SiSpring },
       { name: "Node", icon: SiNodedotjs },
       { name: "Express", icon: SiExpress },
-      { name: "React", icon: SiReactjs },
+      { name: "React", icon: SiReact },
       { name: "Angular", icon: SiAngular }
     ]
   },
@@ -36,10 +36,10 @@ const skillCategories = [
     skills: [
       { name: "SoftwareAG", icon: Code2 },
       { name: "Docker", icon: SiDocker },
-      { name: "AWS", icon: SiAmazonwebservices },
+      { name: "AWS", icon: SiAmazonaws },
       { name: "GIT", icon: SiGit },
       { name: "Apigee", icon: SiApache },
-      { name: "WSO2", icon: SiJson }
+      { name: "Postman", icon: SiPostman }
     ]
   },
   {
