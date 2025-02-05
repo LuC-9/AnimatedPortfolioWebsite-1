@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Code2 } from "lucide-react";
 import { 
   SiJava, SiJavascript, SiPython, SiGnubash,
-  SiSpring, SiNodedotjs, SiExpress, SiReact, SiAngular,
-  SiDocker, SiAws, SiGit, SiApache, SiWso2,
+  SiSpringboot, SiNodedotjs, SiExpress, SiReactjs, SiAngular,
+  SiDocker, SiAmazonwebservices, SiGit, SiApache, SiJson,
   SiMysql, SiMongodb
 } from "react-icons/si";
 
@@ -23,10 +23,10 @@ const skillCategories = [
     title: "Frameworks",
     icon: Code2,
     skills: [
-      { name: "Spring Boot", icon: SiSpring },
+      { name: "Spring Boot", icon: SiSpringboot },
       { name: "Node", icon: SiNodedotjs },
       { name: "Express", icon: SiExpress },
-      { name: "React", icon: SiReact },
+      { name: "React", icon: SiReactjs },
       { name: "Angular", icon: SiAngular }
     ]
   },
@@ -36,10 +36,10 @@ const skillCategories = [
     skills: [
       { name: "SoftwareAG", icon: Code2 },
       { name: "Docker", icon: SiDocker },
-      { name: "AWS", icon: SiAws },
+      { name: "AWS", icon: SiAmazonwebservices },
       { name: "GIT", icon: SiGit },
       { name: "Apigee", icon: SiApache },
-      { name: "WSO2", icon: SiWso2 }
+      { name: "WSO2", icon: SiJson }
     ]
   },
   {
