@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
+import SocialLinks from "./social-links";
 
 export default function HeroSection() {
   return (
@@ -34,12 +35,29 @@ export default function HeroSection() {
         >
           Full Stack Developer & UI/UX Designer
         </motion.p>
+
+        <SocialLinks />
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex gap-4 justify-center mb-12"
+        >
+          <Button asChild className="gap-2">
+            <a href="/Aarsh_Mishra.pdf" target="_blank" rel="noopener noreferrer">
+              <FileText className="w-4 h-4" />
+              View Resume
+            </a>
+          </Button>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <Button size="lg" className="animate-bounce">
+          <Button variant="outline" size="lg" className="animate-bounce">
             <ArrowDown className="mr-2" />
             Scroll to Explore
           </Button>
