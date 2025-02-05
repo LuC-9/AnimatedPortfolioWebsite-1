@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -5,13 +6,23 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A full-stack web application built with React and Node.js",
-    link: "#",
+    title: "Securities Exchange Platform",
+    description: "As a WebMethods Developer, I focused on enhancing integration and data exchange capabilities.",
+    link: "https://adx.ae",
   },
   {
-    title: "Project 2",
-    description: "Modern UI/UX design implementation with animations",
+    title: "Phonebook",
+    description: "Created a phonebook with Django REST framework, featuring user registration, login, contact management (add, list, search), spam marking, email notifications, and PDF downloads.",
+    link: "https://github.com/LuC-9/truecaller-clone",
+  },
+  {
+    title: "Arduino CLI Docker",
+    description: "A CLI tool to compile arduino codes on the cloud without need of an arduino board",
+    link: "https://github.com/LuC-9/Arduino-cli-docker",
+  },
+  {
+    title: "City Management System",
+    description: "A complaint management and resolution dashboard for a smart city utilising REST, Spring, JWT, MySQL and Angular. Developed during internship under Infosys.",
     link: "#",
   },
 ];
