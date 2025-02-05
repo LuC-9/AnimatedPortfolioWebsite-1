@@ -6,7 +6,7 @@ import {
   SiSpring, SiNodedotjs, SiExpress, SiReact, SiAngular,
   SiDocker, SiAmazonaws, SiGit, SiApache, SiWso2,
   SiMysql, SiMongodb
-} from "@react-icons/all-files/si";
+} from "react-icons/si";
 
 const skillCategories = [
   {
