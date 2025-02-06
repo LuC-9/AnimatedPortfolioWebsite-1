@@ -14,23 +14,25 @@ var messages = pgTable("messages", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
-  message: text("message").notNull()
+  message: text("message").notNull(),
 });
-var insertMessageSchema = createInsertSchema(messages).pick({
-  name: true,
-  email: true,
-  phone: true,
-  message: true
-}).extend({
-  email: z.string().email(),
-  phone: z.string().min(10).max(15),
-  message: z.string().min(10)
-});
+var insertMessageSchema = createInsertSchema(messages)
+  .pick({
+    name: true,
+    email: true,
+    phone: true,
+    message: true,
+  })
+  .extend({
+    email: z.string().email(),
+    phone: z.string().min(10).max(15),
+    message: z.string().min(10),
+  });
 
 // routes/api.ts
-var API_PREFIX = "/api";
+var API_PREFIX = "./api";
 var API_ROUTES = {
-  CONTACT: `${API_PREFIX}/contact`
+  CONTACT: `${API_PREFIX}/contact`,
 };
 function registerApiRoutes(app2) {
   app2.post(API_ROUTES.CONTACT, async (req, res) => {
@@ -47,14 +49,14 @@ Message: ${messageData.message}`;
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             chat_id: "728907666",
             text: text2,
-            parse_mode: "HTML"
-          })
-        }
+            parse_mode: "HTML",
+          }),
+        },
       );
       if (!response.ok) {
         throw new Error("Failed to send message to Telegram");
@@ -106,14 +108,14 @@ var vite_config_default = defineConfig({
   resolve: {
     alias: {
       "@": path2.resolve(__dirname2, "client", "src"),
-      "@shared": path2.resolve(__dirname2, "shared")
-    }
+      "@shared": path2.resolve(__dirname2, "shared"),
+    },
   },
   root: path2.resolve(__dirname2, "client"),
   build: {
     outDir: path2.resolve(__dirname2, "dist"),
-    emptyOutDir: true
-  }
+    emptyOutDir: true,
+  },
 });
 
 // server/vite.ts
@@ -122,11 +124,11 @@ var __filename3 = fileURLToPath3(import.meta.url);
 var __dirname3 = dirname3(__filename3);
 var viteLogger = createLogger();
 function log(message, source = "express") {
-  const formattedTime = (/* @__PURE__ */ new Date()).toLocaleTimeString("en-US", {
+  const formattedTime = /* @__PURE__ */ new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
     second: "2-digit",
-    hour12: true
+    hour12: true,
   });
   console.log(`${formattedTime} [${source}] ${message}`);
 }
@@ -134,7 +136,7 @@ async function setupVite(app2, server) {
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
-    allowedHosts: true
+    allowedHosts: true,
   };
   const vite = await createViteServer({
     ...vite_config_default,
@@ -144,10 +146,10 @@ async function setupVite(app2, server) {
       error: (msg, options) => {
         viteLogger.error(msg, options);
         process.exit(1);
-      }
+      },
     },
     server: serverOptions,
-    appType: "custom"
+    appType: "custom",
   });
   app2.use(vite.middlewares);
   app2.use("*", async (req, res, next) => {
@@ -157,12 +159,12 @@ async function setupVite(app2, server) {
         __dirname3,
         "..",
         "client",
-        "index.html"
+        "index.html",
       );
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
       template = template.replace(
         `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`
+        `src="/src/main.tsx?v=${nanoid()}"`,
       );
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
@@ -176,7 +178,7 @@ function serveStatic(app2) {
   const distPath = path3.resolve(__dirname3, "public");
   if (!fs.existsSync(distPath)) {
     throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`
+      `Could not find the build directory: ${distPath}, make sure to build the client first`,
     );
   }
   app2.use(express2.static(distPath));
@@ -194,7 +196,7 @@ app.use((req, res, next) => {
   const path4 = req.path;
   let capturedJsonResponse = void 0;
   const originalResJson = res.json;
-  res.json = function(bodyJson, ...args) {
+  res.json = function (bodyJson, ...args) {
     capturedJsonResponse = bodyJson;
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
