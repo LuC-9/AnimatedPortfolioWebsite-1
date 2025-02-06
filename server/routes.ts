@@ -1,7 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { insertMessageSchema } from "@shared/schema";
-
 const TELEGRAM_TOKEN = "5558392279:AAHzj1ZwLFxusJrPddvQzChYKVpWxyFYTTQ";
 const TELEGRAM_CHAT_ID = "728907666";
 
