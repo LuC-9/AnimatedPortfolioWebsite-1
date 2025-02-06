@@ -1,9 +1,8 @@
-
 import { z } from "zod";
 import { insertMessageSchema } from "@shared/schema";
 import type { Express } from "express";
 
-const API_PREFIX = '/api';
+const API_PREFIX = "/api";
 
 export const API_ROUTES = {
   CONTACT: `${API_PREFIX}/contact`,
