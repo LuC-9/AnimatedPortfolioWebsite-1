@@ -6,15 +6,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function setupScrollTrigger() {
   const sections = document.querySelectorAll("[data-scroll-section]");
-
-  // Background color change on scroll
+  
+  // Create gradient animation on scroll
   gsap.to("body", {
-    backgroundColor: "#327da8",
+    backgroundImage: "linear-gradient(135deg, #1a365d 0%, #327da8 50%, #4299e1 100%)",
     scrollTrigger: {
       trigger: "body",
       start: "top top",
       end: "bottom bottom",
       scrub: 1,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const hue1 = gsap.utils.interpolate(26, 210, progress);
+        const hue2 = gsap.utils.interpolate(96, 240, progress);
+        document.body.style.backgroundImage = `linear-gradient(135deg, 
+          hsl(${hue1}, 70%, 20%) 0%, 
+          hsl(${hue2}, 50%, 40%) 50%, 
+          hsl(${hue1}, 60%, 60%) 100%)`;
+      }
     },
     immediateRender: false
   });
