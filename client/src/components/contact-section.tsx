@@ -138,6 +138,7 @@ export default function ContactSection() {
               <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
+              <Analytics />
             </form>
           </Form>
         </motion.div>
