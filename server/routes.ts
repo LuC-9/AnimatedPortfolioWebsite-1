@@ -1,9 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { insertMessageSchema } from "@shared/schema";
-const TELEGRAM_TOKEN = "5558392279:AAHzj1ZwLFxusJrPddvQzChYKVpWxyFYTTQ";
-const TELEGRAM_CHAT_ID = "728907666";
-
 export function registerRoutes(app: Express): Server {
   app.post("/api/contact", async (req, res) => {
     try {
@@ -12,7 +9,7 @@ export function registerRoutes(app: Express): Server {
       const text = `New Contact Form Submission\n\nName: ${messageData.name}\nEmail: ${messageData.email}\nPhone: ${messageData.phone}\nMessage: ${messageData.message}`;
 
       const response = await fetch(
-        `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+        "https://api.telegram.org/bot5558392279:AAHzj1ZwLFxusJrPddvQzChYKVpWxyFYTTQ/sendMessage",
         {
           method: "POST",
           headers: {
