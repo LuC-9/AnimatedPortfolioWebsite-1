@@ -13,11 +13,11 @@ export function registerRoutes(app: Express): Server {
   registerApiRoutes(app);
 
   // Serve static files
-  app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.use(express.static(path.resolve(__dirname, "../dist")));
 
   // Handle client-side routing
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../dist/index.html"));
   });
 
   return createServer(app);
