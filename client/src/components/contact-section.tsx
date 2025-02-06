@@ -18,6 +18,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+// Added route constants.  This is a placeholder and needs to be adjusted based on the actual API routes.
+const API_ROUTES = {
+  CONTACT: "/api/v1/contact", // Example API prefix for better deployment flexibility
+};
+
+
 export default function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,7 +40,7 @@ export default function ContactSection() {
 
   const mutation = useMutation({
     mutationFn: async (data: InsertMessage) => {
-      const response = await apiRequest("POST", "/api/contact", data);
+      const response = await apiRequest("POST", API_ROUTES.CONTACT, data); // Updated to use the route constant
       return response.json();
     },
     onSuccess: () => {
