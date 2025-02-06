@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react";
 const projects = [
   {
     title: "Securities Exchange Platform",
-    description: "As a WebMethods Developer, I focused on enhancing integration and data exchange capabilities.",
+    description: "As a WebMethods Developer, I focused on enhancing integration and data exchange capabilities. Implemented robust solutions for secure financial transactions and real-time data processing.",
     link: "https://adx.ae",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Arduino CLI Docker",
-    description: "A CLI tool to compile arduino codes on the cloud without need of an arduino board",
+    description: "A CLI tool to compile Arduino codes on the cloud without need of an Arduino board. Enables remote development and testing of Arduino projects with cloud-based compilation.",
     link: "https://github.com/LuC-9/Arduino-cli-docker",
   },
   {
@@ -47,14 +47,15 @@ export default function ProjectsSection() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
+              className="h-full"
             >
-              <Card className="hover:shadow-xl hover:scale-105 hover:bg-primary/5 transition-all duration-300 transform-gpu">
+              <Card className="flex flex-col h-full hover:shadow-xl hover:scale-105 hover:bg-primary/5 transition-all duration-300 transform-gpu">
                 <CardHeader>
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <Button variant="outline" asChild>
+                <CardContent className="flex flex-col flex-grow">
+                  <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
+                  <Button variant="outline" asChild className="w-fit">
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       View Project
                       <ExternalLink className="ml-2 w-4 h-4" />
