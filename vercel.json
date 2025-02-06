@@ -5,6 +5,6 @@
   "rewrites": [
     { "source": "./api/(.*)", "destination": "/api/$1" },
     { "source": "./(.*)", "destination": "/index.html" },
-    { "source": "./api/contact", "destination": "/api/contact" }
+    { "source": "./api/contact", "destination": "/.api/contact" }
   ]
 }
