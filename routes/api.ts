@@ -9,6 +9,7 @@ export const API_ROUTES = {
 } as const;
 
 export function registerApiRoutes(app: Express) {
+  // Register contact routes
   app.post(API_ROUTES.CONTACT, async (req, res) => {
     try {
       const messageData = insertMessageSchema.parse(req.body);

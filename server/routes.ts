@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 
 export function registerRoutes(app: Express): Server {
   // API routes
+  console.log("Registering routes in server/routes.ts"); // Added line for debugging
   registerApiRoutes(app);
 
   // Serve static files
