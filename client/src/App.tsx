@@ -11,15 +11,33 @@ import BackgroundBlob from "./components/background-blob";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/home" component={Home} />
-      <Route path="/about" component={Home} />
-      <Route path="/projects" component={Home} />
-      <Route path="/experience" component={Home} />
-      <Route path="/education" component={Home} />
-      <Route path="/skills" component={Home} />
-      <Route path="/contact" component={Home} />
-      <Route component={NotFound} />
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route path="/home">
+        <Home />
+      </Route>
+      <Route path="/about">
+        <Home />
+      </Route>
+      <Route path="/projects">
+        <Home />
+      </Route>
+      <Route path="/experience">
+        <Home />
+      </Route>
+      <Route path="/education">
+        <Home />
+      </Route>
+      <Route path="/skills">
+        <Home />
+      </Route>
+      <Route path="/contact">
+        <Home />
+      </Route>
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
