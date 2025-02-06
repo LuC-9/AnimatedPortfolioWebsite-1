@@ -1,5 +1,5 @@
 
-import type { Express } from "express";
+import express, { type Express } from "express";
 import { createServer, type Server } from "http";
 import { registerApiRoutes } from "../routes/api";
 import path from "path";
