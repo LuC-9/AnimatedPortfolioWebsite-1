@@ -39,7 +39,7 @@ export default function ProjectsSection() {
         >
           Featured Projects
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
               transition={{ delay: index * 0.2 }}
               className="h-full"
             >
-              <Card className="flex flex-col h-full hover:shadow-xl hover:scale-105 hover:bg-primary/5 transition-all duration-300 transform-gpu">
+              <Card className="flex flex-col h-full hover:shadow-xl hover:scale-105 hover:bg-primary/5 transition-all duration-300 transform-gpu min-h-[250px] justify-between">
                 <CardHeader>
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
                 </CardHeader>
