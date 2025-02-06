@@ -20,5 +20,10 @@ export function registerRoutes(app: Express): Server {
     res.sendFile(path.resolve(__dirname, "../dist/index.html"));
   });
 
+  // Add POST route for /api/contact
+  app.post("/api/contact", (req, res) => {
+    // Handle the contact form data here
+    res.send("Contact form submitted");
+  });
   return createServer(app);
 }
