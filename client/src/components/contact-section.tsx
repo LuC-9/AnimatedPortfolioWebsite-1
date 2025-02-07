@@ -57,7 +57,7 @@ export default function ContactSection() {
   //   },
   // });
 
-  const onSubmit = (data: InsertMessage) => {
+  const onSubmit = async (e: React.FormEvent) => => {
     e.preventDefault();
     setIsLoading(true);
 
