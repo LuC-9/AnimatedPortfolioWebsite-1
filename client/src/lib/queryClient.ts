@@ -8,9 +8,10 @@ async function throwIfResNotOk(res: Response) {
 }
 
 export const apiRequest = async (method: string, url: string, data?: any) => {
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://your-vercel-domain.vercel.app' // Replace with your actual Vercel domain
-    : '';
+  const baseUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://www.byluc.in" // Replace with your actual Vercel domain
+      : "";
 
   return await fetch(`${baseUrl}${url}`, {
     method,
