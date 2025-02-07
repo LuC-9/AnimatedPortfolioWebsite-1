@@ -8,12 +8,7 @@ async function throwIfResNotOk(res: Response) {
 }
 
 export const apiRequest = async (method: string, url: string, data?: any) => {
-  const baseUrl =
-    process.env.NODE_ENV === "production"
-      ? "https://www.byluc.in" // Replace with your actual Vercel domain
-      : "";
-
-  return await fetch(`${baseUrl}${url}`, {
+  return await fetch(url, {
     method,
     headers: {
       "Content-Type": "application/json",
