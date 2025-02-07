@@ -1,28 +1,32 @@
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { insertMessageSchema } from "../shared/schema";
 
 export const config = {
   runtime: 'edge',
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
-
+export default async function handler(req: Request) {
   if (req.method === 'OPTIONS') {
-    return res.status(200).json({});
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+        'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+      }
+    });
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   try {
-    const messageData = insertMessageSchema.parse(req.body);
+    const messageData = insertMessageSchema.parse(await req.json());
     const text = `New Contact Form Submission\n\nName: ${messageData.name}\nEmail: ${messageData.email}\nPhone: ${messageData.phone}\nMessage: ${messageData.message}`;
 
     const response = await fetch(
@@ -37,15 +41,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           text: text,
           parse_mode: "HTML",
         }),
-      },
+      }
     );
 
     if (!response.ok) {
       throw new Error("Failed to send message to Telegram");
     }
 
-    return res.status(200).json({ success: true });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
   } catch (error) {
-    return res.status(400).json({ error: (error as Error).message });
+    return new Response(JSON.stringify({ error: (error as Error).message }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }
