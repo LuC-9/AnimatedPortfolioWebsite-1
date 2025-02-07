@@ -28,7 +28,7 @@ var insertMessageSchema = createInsertSchema(messages).pick({
 });
 
 // routes/api.ts
-var API_PREFIX = "./api";
+var API_PREFIX = "/api";
 var API_ROUTES = {
   CONTACT: `${API_PREFIX}/contact`
 };
