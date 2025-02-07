@@ -34,32 +34,59 @@ export default function ContactSection() {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: InsertMessage) => {
-      const response = await apiRequest("POST", API_ROUTES.CONTACT, data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      form.reset();
-      setIsSubmitting(false);
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-    },
-  });
+  // const mutation = useMutation({
+  //   mutationFn: async (data: InsertMessage) => {
+  //     const response = await apiRequest("POST", API_ROUTES.CONTACT, data);
+  //     return response.json();
+  //   },
+  //   onSuccess: () => {
+  //     toast({
+  //       title: "Message sent!",
+  //       description: "Thank you for reaching out. I'll get back to you soon.",
+  //     });
+  //     form.reset();
+  //     setIsSubmitting(false);
+  //   },
+  //   onError: () => {
+  //     toast({
+  //       title: "Error",
+  //       description: "Failed to send message. Please try again.",
+  //       variant: "destructive",
+  //     });
+  //     setIsSubmitting(false);
+  //   },
+  // });
 
   const onSubmit = (data: InsertMessage) => {
-    setIsSubmitting(true);
-    mutation.mutate(data);
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      // Replace BOT_TOKEN and CHAT_ID with your actual Telegram bot token and chat ID
+      const BOT_TOKEN = "5558392279:AAHzj1ZwLFxusJrPddvQzChYKVpWxyFYTTQ";
+      const CHAT_ID = "728907666";
+
+      const text = `
+New Contact Form Submission:
+Name: ${formData.name}
+Email: ${formData.email}
+Message: ${formData.message}
+      `;
+
+      await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        chat_id: CHAT_ID,
+        text,
+        parse_mode: "HTML",
+      });
+
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+      console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
